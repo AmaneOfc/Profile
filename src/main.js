@@ -171,3 +171,39 @@ const navObserver = new IntersectionObserver(entries => {
   });
 }, { rootMargin: '-42% 0px -48% 0px' });
 sections.forEach(section => navObserver.observe(section));
+
+/* Favorite playlist UI — visual player only. Add local audio files when ready. */
+const songs = [
+  { title: "Somebody's Pleasure", art: 'art-pleasure' },
+  { title: 'Blank Space', art: 'art-blank' },
+  { title: 'Into Your Arms', art: 'art-arms' },
+  { title: 'Selamat Tinggal', art: 'art-selamat' }
+];
+const songButtons = [...document.querySelectorAll('.song')];
+const nowTitle = document.querySelector('#nowTitle');
+const nowArtist = document.querySelector('#nowArtist');
+const featureArt = document.querySelector('#playlistFeature .song-art');
+let selectedSong = 0;
+let playing = false;
+
+function selectSong(index) {
+  selectedSong = (index + songs.length) % songs.length;
+  const song = songs[selectedSong];
+  nowTitle.textContent = song.title;
+  nowArtist.textContent = 'Favorite track';
+  featureArt.className = `song-art ${song.art}`;
+  featureArt.innerHTML = `<span>${song.title === "Somebody's Pleasure" ? "SOMEONE'S<br>PLEASURE" : song.title.toUpperCase()}</span><b>0${selectedSong + 1}</b>`;
+  songButtons.forEach((button, i) => button.classList.toggle('active', i === selectedSong));
+}
+
+songButtons.forEach(button => button.addEventListener('click', () => {
+  selectSong(Number(button.dataset.index));
+  playing = false;
+  document.querySelector('#playSong').textContent = '▶';
+}));
+document.querySelector('#prevSong')?.addEventListener('click', () => selectSong(selectedSong - 1));
+document.querySelector('#nextSong')?.addEventListener('click', () => selectSong(selectedSong + 1));
+document.querySelector('#playSong')?.addEventListener('click', () => {
+  playing = !playing;
+  document.querySelector('#playSong').textContent = playing ? 'Ⅱ' : '▶';
+});

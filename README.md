@@ -1,8 +1,16 @@
 # Nezumi Portfolio
 
-A dark, cold, futuristic personal portfolio built with Vite + vanilla HTML/CSS/JS.
+Professional cold/futuristic portfolio built with **Vite + vanilla JavaScript**.
 
-## Run locally
+## Stack
+
+- Vite
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Canvas API for lightning + starfield
+
+## Run
 
 ```bash
 npm install
@@ -15,25 +23,20 @@ npm run dev
 npm run build
 ```
 
-## Vercel
+## Deploy
 
-Push this folder to GitHub, then import the repository into Vercel.
+Keep the existing Vercel project connected to this GitHub repository. Push the updated source and Vercel will create a new deployment automatically.
 
-- Framework preset: Vite
-- Build command: `npm run build`
-- Output directory: `dist`
+## Main files
 
-Vercel normally detects the Vite project automatically.
+- `index.html` — portfolio sections and links
+- `src/style.css` — visual system and responsive design
+- `src/main.js` — cinematic top-to-bottom lightning loader, starfield, pointer glow and scroll reveal
+- `public/profile.jpg` — profile image
 
-## Customize
+## Current links
 
-- Profile image: `public/profile.jpg`
-- Main content: `index.html`
-- Styling: `src/style.css`
-- Animations/interactions: `src/main.js`
-- Replace the placeholder GitHub/Instagram/email links in `index.html`.
-- Replace project cards with your actual projects and repository/demo links.
+- Telegram Bot MD: https://t.me/yukimultidevice
+- Shikimori Bot Web: https://jadibot.nezumi.eu.cc
 
-## Design notes
-
-The profile photo is intentionally treated with a cool blue/low-saturation visual layer and the portrait crop keeps the lower foreground less prominent, so the hero feels calmer and more distant.
+Replace the GitHub placeholder in `index.html` with your repository before publishing.

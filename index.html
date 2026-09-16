@@ -3,18 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#050a14" />
-    <meta name="description" content="Nezumi — Developer, creator and builder." />
-    <title>Nezumi — Portfolio</title>
+    <meta name="theme-color" content="#030712" />
+    <meta name="description" content="Nezumi — Developer, Bot Builder and Web Creator." />
+    <title>NEZUMI — Developer Portfolio</title>
   </head>
   <body>
-    <div id="loader" class="loader">
-      <div class="loader-core"></div>
-      <div class="loader-line"></div>
-      <p>INITIALIZING NEZUMI<span>_</span></p>
+    <div id="loader" class="loader" aria-label="Loading portfolio">
+      <canvas id="lightning" aria-hidden="true"></canvas>
+      <div class="storm"></div>
+      <div class="loader-flash"></div>
+      <div class="loader-content">
+        <div class="loader-mark">N</div>
+        <div class="loader-name">NEZUMI</div>
+        <div class="loader-caption">ESTABLISHING CONNECTION</div>
+        <div class="loader-progress"><i></i></div>
+        <div class="loader-percent">00%</div>
+      </div>
     </div>
 
     <canvas id="stars"></canvas>
+    <div class="grid-bg"></div>
     <div class="noise"></div>
     <div class="cursor-glow"></div>
 
@@ -23,7 +31,7 @@
         <span class="brand-mark">N</span>
         <span>NEZUMI</span>
       </a>
-      <nav>
+      <nav aria-label="Primary navigation">
         <a class="active" href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -38,10 +46,17 @@
         <div class="hero-copy reveal">
           <p class="eyebrow">DEVELOPER / CREATOR</p>
           <h1>Hi, I'm<br><span>Nezumi.</span></h1>
-          <p class="lead">I build digital experiences, bots and web projects with a clean interface and a little bit of chaos underneath.</p>
+          <p class="lead">I build web interfaces, messaging bots and practical digital systems with a strong focus on clean design.</p>
           <div class="actions">
             <a class="button primary" href="#projects">View Projects <span>↗</span></a>
-            <a class="button ghost" href="#contact">Contact Me</a>
+            <a class="button ghost" href="https://t.me/yukimultidevice" target="_blank" rel="noreferrer">Telegram Bot</a>
+          </div>
+          <div class="tech-row" aria-label="Technology focus">
+            <span class="tech-icon" title="JavaScript">JS</span>
+            <span class="tech-icon" title="HTML">&lt;/&gt;</span>
+            <span class="tech-icon" title="CSS">#</span>
+            <span class="tech-icon" title="Node.js">{ }</span>
+            <span class="tech-icon" title="API">API</span>
           </div>
         </div>
 
@@ -49,13 +64,11 @@
           <div class="portrait-orbit orbit-a"></div>
           <div class="portrait-orbit orbit-b"></div>
           <div class="portrait-card">
+            <div class="portrait-topline"><span>NEZUMI // 001</span><span>ONLINE</span></div>
             <div class="scanline"></div>
             <img src="/profile.jpg" alt="Nezumi profile portrait" />
             <div class="cold-overlay"></div>
-            <div class="portrait-label">
-              <span>01 / PROFILE</span>
-              <b>NEZUMI</b>
-            </div>
+            <div class="portrait-label"><span>PROFILE</span><b>NEZUMI</b></div>
           </div>
         </div>
 
@@ -63,7 +76,7 @@
           <span class="side-index">01 — 05</span>
           <div class="vertical-rule"></div>
           <p>Independent developer focused on web interfaces, automation and bot systems.</p>
-          <a href="#about" class="circle-arrow">↓</a>
+          <a href="#about" class="circle-arrow" aria-label="Scroll to about">↓</a>
         </aside>
       </section>
 
@@ -73,13 +86,13 @@
           <h2>Quiet interface.<br><em>Serious work.</em></h2>
         </div>
         <div class="about-grid">
-          <p class="big-copy reveal">I like turning ideas into things people can actually use — from personal websites to automation and messaging systems.</p>
+          <p class="big-copy reveal">I like turning ideas into useful products — from personal websites and bots to automation, APIs and custom digital tools.</p>
           <div class="info-card reveal">
             <span>PROFILE</span>
-            <p>Nezumi is a developer and digital creator who enjoys building practical projects with a strong visual identity.</p>
+            <p>Developer and digital creator building practical systems with a calm, technical visual identity.</p>
             <div class="mini-line"></div>
             <span>FOCUS</span>
-            <p>Web development · Bot development · API integration · UI design</p>
+            <p>Web development · Bot development · API integration · UI systems</p>
           </div>
         </div>
       </section>
@@ -87,45 +100,46 @@
       <section id="skills" class="section content-section">
         <div class="section-heading reveal">
           <span>03 / SKILLS</span>
-          <h2>Tools I use<br><em>to build.</em></h2>
+          <h2>Built with<br><em>code.</em></h2>
         </div>
         <div class="skills-grid">
-          <article class="skill reveal"><span>01</span><h3>JavaScript</h3><p>Node.js · APIs · Automation</p></article>
-          <article class="skill reveal"><span>02</span><h3>Web</h3><p>HTML · CSS · Responsive UI</p></article>
-          <article class="skill reveal"><span>03</span><h3>Bot Systems</h3><p>WhatsApp · Telegram · Integrations</p></article>
-          <article class="skill reveal"><span>04</span><h3>Backend</h3><p>REST API · Database · Deployment</p></article>
+          <article class="skill reveal"><div class="code-icon">JS</div><span>01</span><h3>JavaScript</h3><p>Node.js · Logic · Automation</p></article>
+          <article class="skill reveal"><div class="code-icon">&lt;/&gt;</div><span>02</span><h3>Web</h3><p>HTML · CSS · Responsive UI</p></article>
+          <article class="skill reveal"><div class="code-icon">{ }</div><span>03</span><h3>Bot Systems</h3><p>WhatsApp · Telegram · APIs</p></article>
+          <article class="skill reveal"><div class="code-icon">API</div><span>04</span><h3>Backend</h3><p>REST · Database · Deployment</p></article>
         </div>
       </section>
 
-      <section id="projects" class="section content-section projects-section">
+      <section id="projects" class="section content-section">
         <div class="section-heading reveal">
           <span>04 / SELECTED PROJECTS</span>
           <h2>Things I've<br><em>built.</em></h2>
         </div>
         <div class="projects">
           <article class="project-card featured reveal">
-            <div class="project-number">01</div>
+            <div class="project-top"><small>01</small><span class="project-icon">{ }</span></div>
             <div class="project-meta"><span>BOT SYSTEM</span><span>NODE.JS</span></div>
-            <h3>Shikimori Bot</h3>
-            <p>A modular messaging-bot ecosystem with commands, automation, APIs and a customizable interface.</p>
-            <a href="#" aria-label="Shikimori Bot project">Explore ↗</a>
+            <h3>Telegram Bot MD</h3>
+            <p>A messaging-bot project focused on automation, commands, integrations and a clean user experience.</p>
+            <div class="project-links">
+              <a href="https://t.me/yukimultidevice" target="_blank" rel="noreferrer">Open Telegram ↗</a>
+            </div>
           </article>
           <article class="project-card reveal">
-            <div class="project-number">02</div>
+            <div class="project-top"><small>02</small><span class="project-icon">&lt;/&gt;</span></div>
             <div class="project-meta"><span>WEB</span><span>UI / UX</span></div>
-            <h3>Amane Store</h3>
-            <p>Digital storefront concept with modern ordering flows and a premium visual system.</p>
-            <a href="#" aria-label="Amane Store project">Explore ↗</a>
+            <h3>Shikimori Bot Web</h3>
+            <p>A web interface connected to the Shikimori Bot ecosystem.</p>
+            <div class="project-links"><a href="https://jadibot.nezumi.eu.cc" target="_blank" rel="noreferrer">Visit Website ↗</a></div>
           </article>
           <article class="project-card reveal">
-            <div class="project-number">03</div>
-            <div class="project-meta"><span>TOOLS</span><span>API</span></div>
+            <div class="project-top"><small>03</small><span class="project-icon">API</span></div>
+            <div class="project-meta"><span>TOOLS</span><span>INTEGRATION</span></div>
             <h3>Automation Lab</h3>
-            <p>A collection of small tools and integrations built to remove repetitive work.</p>
-            <a href="#" aria-label="Automation Lab project">Explore ↗</a>
+            <p>Custom utilities and API integrations designed to simplify repetitive workflows.</p>
+            <div class="project-links"><a href="#contact">Discuss Project ↗</a></div>
           </article>
         </div>
-        <p class="edit-note reveal">Replace the placeholder project links and descriptions with your real repositories before publishing.</p>
       </section>
 
       <section id="contact" class="section contact-section">
@@ -134,19 +148,15 @@
           <h2>Have an idea?<br><em>Let's build it.</em></h2>
           <p>Open to interesting projects, collaborations and experiments.</p>
           <div class="contact-links">
+            <a href="https://t.me/yukimultidevice" target="_blank" rel="noreferrer">Telegram ↗</a>
+            <a href="https://jadibot.nezumi.eu.cc" target="_blank" rel="noreferrer">Website ↗</a>
             <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram ↗</a>
-            <a href="mailto:hello@example.com">Email ↗</a>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>
-      <span>© 2026 NEZUMI</span>
-      <span>BUILT WITH CURIOSITY</span>
-    </footer>
-
+    <footer><span>© 2026 NEZUMI</span><span>BUILT WITH CODE</span></footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
